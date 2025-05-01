@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StorePostRequest extends FormRequest
 {
@@ -22,8 +23,8 @@ class StorePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'author' => 'required|string|max:255',
-            'title' => 'required|string|max:255',
+            'author' => 'required|string',
+            'title' => ['required', 'string', 'unique:posts', 'max:255'],
             'body' => 'required|string',
             // other validation rules...
         ];
