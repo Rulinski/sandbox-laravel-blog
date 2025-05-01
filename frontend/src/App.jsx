@@ -3,6 +3,7 @@ import Navigation from "./Components/Navigation"
 import {Route, Routes} from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
+import Create from "./Pages/Posts/Create";
 
 export default function App() {
     return (
@@ -11,6 +12,7 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/about" element={<About/>}/>
+                <Route path="/posts/create" element={<Create/>}/>
             </Routes>
         </div>
     )
